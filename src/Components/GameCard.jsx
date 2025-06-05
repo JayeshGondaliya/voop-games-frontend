@@ -11,7 +11,8 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const [searchParams] = useSearchParams();
     const { category } = useParams();
     const navigate = useNavigate();
-    const url = "http://localhost:8085";
+    const url = process.env.REACT_APP_API_URL;
+
 
     const search = searchParams.get("search") || "";
 

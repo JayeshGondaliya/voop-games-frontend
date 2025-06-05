@@ -14,6 +14,8 @@ import Footer from './Components/Footer';
 import ScrollToTop from './Components/ScrollToTop';
 
 const App = () => {
+  // console.log("this is url ",process.env.REACT_APP_API_URL);
+  
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);

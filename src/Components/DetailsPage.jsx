@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 function DetailsPage() {
     const navigate = useNavigate();
-    const url = "http://localhost:8085";
+    const url = process.env.REACT_APP_API_URL;
     const { code } = useParams();
 
     const [game, setGame] = useState(null);

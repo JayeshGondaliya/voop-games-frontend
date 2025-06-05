@@ -17,7 +17,7 @@ const Category = () => {
             setError(null);
             try {
                 const res = await axios.get(
-                    `http://localhost:8085/api/game/category/${category}`,
+                    `${process.env.REACT_APP_API_URL}/api/game/category/${category}`,
                     { withCredentials: true }
                 );
                 setGames(res.data.data || []);

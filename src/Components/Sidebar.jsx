@@ -73,7 +73,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get(`http://localhost:8085/api/game/all-categories`);
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/game/all-categories`);
                 setCategories(res.data.data || []);
             } catch (err) {
                 console.error("Failed to fetch categories:", err.message);
