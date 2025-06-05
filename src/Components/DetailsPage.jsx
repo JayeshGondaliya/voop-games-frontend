@@ -71,9 +71,13 @@ function DetailsPage() {
     // 👇 Scroll to top smoothly whenever game changes
     useLayoutEffect(() => {
         if (gameContainerRef.current) {
-            gameContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+            const yOffset = -64; // adjust this number to match your header height
+            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     }, [game]);
+
 
     if (loading) {
         return (

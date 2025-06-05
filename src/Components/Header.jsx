@@ -48,7 +48,7 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
     const showSearch = location.pathname === '/';
 
     return (
-        <header className="sticky -top-0 z-40 flex items-center justify-between bg-gray-900 pt-0 px-2 md:px-2 h-16 border-b-0 shadow-none">
+        <header className="sticky top-0 z-40 flex items-center justify-between bg-gray-900 pt-0 px-2 md:px-2 h-16 border-b-0 shadow-none">
             {isMobile && (
                 <button onClick={toggleSidebar} className="text-white lg:hidden">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
