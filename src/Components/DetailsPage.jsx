@@ -153,7 +153,7 @@ function DetailsPage() {
                                         ? `https://lukogames.com/quiz/index.php?code=${game.code}`
                                         : `https://lukogames.com/games/${game.code}`
                                 }
-                                target="_blank"
+                                target="_self"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-blue-600 hover:bg-blue-700 transition px-5 py-2.5 rounded-lg font-semibold text-white text-sm sm:text-base text-center mt-4"
                             >
