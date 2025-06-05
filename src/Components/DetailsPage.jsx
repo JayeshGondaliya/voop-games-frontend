@@ -92,7 +92,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex min-h-screen bg-gray-900 p-4 text-white relative mt-0 sm:mt-1 md:mt-3">
+        <div className="flex min-h-screen bg-gray-900 p-4 text-white relative ">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
