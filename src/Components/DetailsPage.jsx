@@ -92,7 +92,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex min-h-screen bg-gray-900 p-4 text-white relative ">
+        <div className="flex min-h-screen bg-red-500 p-4 text-white relative ">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
@@ -100,7 +100,7 @@ function DetailsPage() {
                 ></div>
             )}
 
-            <div className="flex-1 p-0 m-0 overflow-auto w-full">
+            <div className="flex-1 p-0 m-0 overflow-auto w-full mt-3">
                 {/* Game Detail */}
                 {game && (
                     <div
