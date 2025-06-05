@@ -68,16 +68,12 @@ function DetailsPage() {
         }
     }, [game]);
 
-    // 👇 Scroll to top smoothly with 100px offset whenever game changes
+    // 👇 Scroll to top smoothly whenever game changes
     useLayoutEffect(() => {
         if (gameContainerRef.current) {
-            const yOffset = -100; // Scroll 100px above the element
-            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            gameContainerRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     }, [game]);
-
 
     if (loading) {
         return (
