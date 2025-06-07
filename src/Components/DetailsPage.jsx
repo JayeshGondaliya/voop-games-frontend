@@ -67,16 +67,14 @@ function DetailsPage() {
         }
     }, [game]);
 
-    // ✅ Scroll 10px from top when game changes
+
     useEffect(() => {
         if (game && gameContainerRef.current) {
-            // First scroll to the element
             gameContainerRef.current.scrollIntoView({ behavior: 'smooth' });
 
-            // Then adjust 10px from top after a slight delay
             setTimeout(() => {
-                window.scrollBy(0, -10); // scroll up 10px
-            }, 300); // Wait for scrollIntoView to complete
+                window.scrollBy(0, -100); 
+                        }, 3000); 
         }
     }, [game]);
 
