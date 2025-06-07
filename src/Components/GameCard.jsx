@@ -68,7 +68,7 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <div onClick={(e) => e.stopPropagation()}>
                 <div className="pb-4  text-center">
                     <h2 className="text-2xl font-bold text-white">
-                        {category ? `Games in ${category}` : "Actual Games"}
+                        {category ? `Games in ${category}` : ""}
                     </h2>
                 </div>
 

@@ -1,7 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
 
 function DetailsPage() {
     const navigate = useNavigate();
@@ -68,13 +67,16 @@ function DetailsPage() {
         }
     }, [game]);
 
-    // 👇 Scroll to top smoothly whenever game changes
-    useLayoutEffect(() => {
-        if (gameContainerRef.current) {
-            const yOffset = -64; // adjust this number to match your header height
-            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    // ✅ Scroll 10px from top when game changes
+    useEffect(() => {
+        if (game && gameContainerRef.current) {
+            // First scroll to the element
+            gameContainerRef.current.scrollIntoView({ behavior: 'smooth' });
 
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            // Then adjust 10px from top after a slight delay
+            setTimeout(() => {
+                window.scrollBy(0, -10); // scroll up 10px
+            }, 300); // Wait for scrollIntoView to complete
         }
     }, [game]);
 
@@ -116,6 +118,7 @@ function DetailsPage() {
                             <img
                                 src={`https://www.lukogames.com/assets/games/${game.code}/banner.png`}
                                 alt={game.name}
+
                                 className="w-full max-w-full h-auto object-cover rounded-lg border-2 border-gray-700 shadow-md"
                             />
                         </div>

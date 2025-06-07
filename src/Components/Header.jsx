@@ -57,11 +57,11 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
                 </button>
             )}
 
-            <div className={`flex-1 flex items-center ${isMobile && !isSearchActive ? 'justify-center' : 'justify-start'} md:justify-start`}>
+            <div className={`flex-1 flex items-center ${isMobile && !isSearchActive ? '' : 'justify-start'} md:justify-start`}>
 
                 {/* Logo: show only when search is not active in mobile */}
                 {(!isMobile || !isSearchActive) && (
-                    <div className="flex items-center px-6 py-4">
+                    <div className="flex  px-6 py-4">
                         <Link to="/" className="flex items-center" onClick={closeSidebar}>
                             <div className="mr-1 h-8 w-auto p-2 rounded-md bg-red-600 flex items-center justify-center">
                                 <span className="text-xl text-white font-bold">VOOP</span>

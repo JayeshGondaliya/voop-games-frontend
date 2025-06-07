@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar }) => {
     const [categories, setCategories] = useState([]);
+    const location = useLocation();
 
     const categoryIcons = {
         Educational: (
@@ -57,13 +58,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
             </svg>
         ),
         Strategy: (
-            <svg
-                className="h-4 w-4 text-teal-600"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-            >
+            <svg className="h-4 w-4 text-teal-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 12l4 4 4-8" />
             </svg>
@@ -84,37 +79,31 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
 
     return (
         <>
-            {/* Overlay for mobile */}
             {isSidebarOpen && (
-                <div
-                    onClick={closeSidebar}
-                    className="fixed  bg-gray-900 bg-opacity-50 z-40 md:hidden"
-                ></div>
+                <div onClick={closeSidebar} className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 md:hidden" />
             )}
 
             <aside
                 className={`
-        bg-gray-900 text-white border-r border-gray-700
-        w-64
-        fixed top-16 left-0 h-[calc(100vh-64px)] z-50
-        transform transition-transform duration-300 ease-in-out
-
-        /* Desktop: static sidebar */
-        lg:relative lg:top-0 lg:left-0 lg:h-auto lg:transform-none lg:z-auto
-
-        /* Slide in/out on tablet/mobile */
-        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-      `}
+                    bg-gray-900 text-white border-r border-gray-700
+                    w-64 fixed top-16 left-0 h-[calc(100vh-64px)] z-50
+                    transform transition-transform duration-300 ease-in-out
+                    lg:relative lg:top-0 lg:left-0 lg:h-auto lg:transform-none lg:z-auto
+                    ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+                `}
             >
                 <div className="flex h-full flex-col overflow-auto pt-9 px-4">
-                    {/* Main Navigation */}
                     <nav className="flex-1">
                         <ul className="space-y-2">
+                            {/* Home Link */}
                             <li>
                                 <Link
                                     to="/"
-                                    className="flex items-center px-4 py-2 rounded-lg bg-gray-800 text-red-500"
                                     onClick={closeSidebar}
+                                    className={`flex items-center px-4 py-2 rounded-lg ${location.pathname === '/'
+                                        ? 'bg-gray-800  text-red-500 '
+                                        : ' bg-gray-800 text-white '
+                                        }`}
                                 >
                                     <svg className="h-5 w-5 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                         <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
@@ -124,6 +113,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
                                 </Link>
                             </li>
 
+                            {/* Category Links */}
                             <li>
                                 <ul className="pl-6 space-y-1 mt-1">
                                     {categories.map((category, index) => {
@@ -132,13 +122,14 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
                                                 <circle cx="12" cy="12" r="10" />
                                             </svg>
                                         );
-
+                                        const isActive = location.pathname === `/category/${category}`;
                                         return (
                                             <li key={index}>
                                                 <Link
                                                     to={`/category/${category}`}
                                                     onClick={closeSidebar}
-                                                    className="flex items-center gap-2 py-1 hover:text-red-500"
+                                                    className={`flex items-center gap-2 py-1 hover:text-red-500 ${isActive ? 'text-red-500 ' : 'text-white'
+                                                        }`}
                                                 >
                                                     {icon}
                                                     <span>{category}</span>
