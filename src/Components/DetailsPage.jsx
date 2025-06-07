@@ -70,13 +70,16 @@ function DetailsPage() {
 
     useEffect(() => {
         if (game && gameContainerRef.current) {
-            gameContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+            gameContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             setTimeout(() => {
-                window.scrollBy(0, -100); 
-                        }, 3000); 
+                const yOffset = -60; // header offset if any
+                const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }, 400); // enough delay for layout to stabilize
         }
     }, [game]);
+
 
 
     if (loading) {
@@ -96,7 +99,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex min-h-screen bg-gray-900 p-4 text-white relative">
+        <div className="flex top-1 min-h-screen bg-gray-900 p-4 text-white relative">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
