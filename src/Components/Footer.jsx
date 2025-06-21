@@ -19,7 +19,7 @@ const Footer = () => {
 
 
                     {/* Links + Social */}
-                    <div className="bg-red-500  md:w-1/2 flex flex-nowrap md:flex-wrap lg:flex-wrap text-center gap-4 md:gap-8 justify-between md:justify-between lg:justify-around text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-6xl mx-auto ">
+                    <div className=" md:w-1/2 flex flex-nowrap md:flex-wrap lg:flex-wrap text-center gap-4 md:gap-8 justify-between md:justify-between lg:justify-around text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-6xl mx-auto ">
 
                         {/* Our Links */}
                         <div className="text-left w-1/2 md:w-auto text-center">
