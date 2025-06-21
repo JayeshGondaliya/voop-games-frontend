@@ -55,6 +55,7 @@ function DetailsPage() {
 
     useEffect(() => {
         if (code) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             fetchGameDetails();
         }
     }, [code]);
@@ -67,20 +68,14 @@ function DetailsPage() {
         }
     }, [game]);
 
-
+    // Smooth scroll to game details section on mobile and desktop with offset
     useEffect(() => {
         if (game && gameContainerRef.current) {
-            gameContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            setTimeout(() => {
-                const yOffset = -60; // header offset if any
-                const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }, 400); // enough delay for layout to stabilize
+            const yOffset = -64; // Adjust offset as needed for fixed header height
+            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     }, [game]);
-
-
 
     if (loading) {
         return (
@@ -99,15 +94,15 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex top-1 min-h-screen bg-gray-900 p-4 text-white relative">
+        <div className="flex bg-gray-900 p-4 text-white relative flex-col">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
                     className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
-                ></div>
+                />
             )}
 
-            <div className="flex-1 p-0 m-0 overflow-auto w-full">
+            <div className="flex-1 p-0 m-0 w-full">
                 {/* Game Detail */}
                 {game && (
                     <div
@@ -119,7 +114,6 @@ function DetailsPage() {
                             <img
                                 src={`https://www.lukogames.com/assets/games/${game.code}/banner.png`}
                                 alt={game.name}
-
                                 className="w-full max-w-full h-auto object-cover rounded-lg border-2 border-gray-700 shadow-md"
                             />
                         </div>
