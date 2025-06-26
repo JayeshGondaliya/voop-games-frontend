@@ -55,10 +55,11 @@ function DetailsPage() {
 
     useEffect(() => {
         if (code) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // offset header height
             fetchGameDetails();
         }
     }, [code]);
+
 
     useEffect(() => {
         if (game?.category) {
@@ -94,7 +95,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex bg-gray-900 p-4 text-white relative flex-col">
+        <div className="flex bg-gray-900 p-10  text-white relative flex-col">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
@@ -174,7 +175,7 @@ function DetailsPage() {
                         <div
                             key={relatedGame.code}
                             className="rounded-xl overflow-hidden bg-gray-800 transition-transform hover:-translate-y-1 cursor-pointer"
-                            onClick={() => navigate(`/${relatedGame.code}`)}
+                            onClick={() => window.location.href = `/${relatedGame.code}`}
                         >
                             <div className="h-50 bg-gray-700 relative group">
                                 <img

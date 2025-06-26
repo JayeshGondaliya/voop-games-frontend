@@ -12,6 +12,7 @@ import './App.css';
 import './index.css';
 import Footer from './Components/Footer';
 import ScrollToTop from './Components/ScrollToTop';
+import DetailsPageWrapper from './Components/DetailsPageWrapper';
 
 const App = () => {
   // console.log("this is url ",process.env.REACT_APP_API_URL);
@@ -79,7 +80,7 @@ const App = () => {
                 }
               />
               <Route path="/category/:category" element={<Category />} />
-              <Route path="/:code" element={<DetailsPage />} />
+              <Route path="/:code" element={<DetailsPageWrapper  />} />
             </Routes>
              <div >
             <hr />
