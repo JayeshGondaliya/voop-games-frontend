@@ -70,13 +70,13 @@ function DetailsPage() {
     }, [game]);
 
     // Smooth scroll to game details section on mobile and desktop with offset
-    useEffect(() => {
-        if (game && gameContainerRef.current) {
-            const yOffset = -64; // Adjust offset as needed for fixed header height
-            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-    }, [game]);
+    // useEffect(() => {
+    //     if (game && gameContainerRef.current) {
+    //         const yOffset = -64; // Adjust offset as needed for fixed header height
+    //         const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    //         window.scrollTo({ top: y, behavior: 'smooth' });
+    //     }
+    // }, [game]);
 
     if (loading) {
         return (
