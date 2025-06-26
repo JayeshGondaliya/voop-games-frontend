@@ -70,13 +70,13 @@ function DetailsPage() {
     }, [game]);
 
     // Smooth scroll to game details section on mobile and desktop with offset
-    // useEffect(() => {
-    //     if (game && gameContainerRef.current) {
-    //         const yOffset = -64; // Adjust offset as needed for fixed header height
-    //         const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    //         window.scrollTo({ top: y, behavior: 'smooth' });
-    //     }
-    // }, [game]);
+    useEffect(() => {
+        if (game && gameContainerRef.current) {
+            const yOffset = -64; // Adjust offset as needed for fixed header height
+            const y = gameContainerRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    }, [game]);
 
     if (loading) {
         return (
@@ -99,7 +99,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex bg-gray-900 p-10  text-white relative flex-col">
+        <div className="flex bg-gray-900 p-4  text-white relative flex-col">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
@@ -112,7 +112,7 @@ function DetailsPage() {
                 {game && (
                     <div
                         ref={gameContainerRef}
-                        className="relative bg-gray-900 min-h-screen rounded-lg shadow-lg p-0 sm:p-6 mb-12 flex flex-col lg:flex-row lg:items-start gap-7"
+                        className="relative bg-gray-900 rounded-lg shadow-lg p-0 sm:p-6 mb-12 flex flex-col lg:flex-row lg:items-start gap-7"
                     >
                         {/* Left Side - Game Image */}
                         <div className="w-full lg:w-1/2 flex justify-center items-center">
@@ -171,7 +171,7 @@ function DetailsPage() {
                 )}
 
                 {/* Related Games */}
-                <h1 className="text-2xl sm:text-3xl font-bold text-start text-white mb-6">
+                <h1 className="text-2xl  sm:text-3xl font-bold text-start text-white mb-6">
                     Related Games
                 </h1>
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-6">
