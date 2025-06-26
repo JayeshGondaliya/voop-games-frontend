@@ -99,7 +99,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex bg-gray-900 p-4  text-white relative flex-col">
+        <div className="flex bg-gray-900 p-2  text-white relative flex-col">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
