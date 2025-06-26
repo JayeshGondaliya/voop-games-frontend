@@ -83,7 +83,6 @@ function DetailsPage() {
             <div className="min-h-screen flex justify-center items-center bg-gray-900 text-white">
                 <div className="flex flex-col items-center space-y-4">
                     <div className="w-12 h-12 border-4 border-blue-500 border-dotted rounded-full animate-spin"></div>
-                    <p className="text-lg font-semibold text-white">Loading game details...</p>
                 </div>
             </div>
         );
@@ -99,7 +98,7 @@ function DetailsPage() {
     }
 
     return (
-        <div className="flex bg-gray-900 p-2  text-white relative flex-col">
+        <div className="flex bg-gray-900 p-  text-white relative flex-col">
             {isSidebarOpen && (
                 <div
                     onClick={() => setIsSidebarOpen(false)}
