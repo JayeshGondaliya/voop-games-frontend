@@ -120,7 +120,7 @@ function DetailsPage() {
                         </div>
 
                         {/* Right Side - Game Details */}
-                        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-4">
+                        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-0">
                             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-wide text-white">
                                 {game.name}
                             </h2>
