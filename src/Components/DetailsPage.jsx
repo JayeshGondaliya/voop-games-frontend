@@ -81,10 +81,14 @@ function DetailsPage() {
     if (loading) {
         return (
             <div className="min-h-screen flex justify-center items-center bg-gray-900 text-white">
-                <p className="text-xl font-semibold">Loading game details...</p>
+                <div className="flex flex-col items-center space-y-4">
+                    <div className="w-12 h-12 border-4 border-blue-500 border-dotted rounded-full animate-spin"></div>
+                    <p className="text-lg font-semibold text-white">Loading game details...</p>
+                </div>
             </div>
         );
     }
+
 
     if (errorMsg) {
         return (
@@ -108,7 +112,7 @@ function DetailsPage() {
                 {game && (
                     <div
                         ref={gameContainerRef}
-                        className="relative bg-gray-900 rounded-lg shadow-lg p-0 sm:p-6 mb-12 flex flex-col lg:flex-row lg:items-start gap-7"
+                        className="relative bg-gray-900 min-h-screen rounded-lg shadow-lg p-0 sm:p-6 mb-12 flex flex-col lg:flex-row lg:items-start gap-7"
                     >
                         {/* Left Side - Game Image */}
                         <div className="w-full lg:w-1/2 flex justify-center items-center">
