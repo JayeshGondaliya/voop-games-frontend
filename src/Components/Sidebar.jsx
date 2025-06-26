@@ -15,12 +15,24 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
             </svg>
         ),
         Racing: (
-            <svg className="h-4 w-4 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+
+            <svg
+                className="h-4 w-4 text-yellow-500 align-middle"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+            >
                 <path d="M3 13h18l-1 9H4l-1-9z" />
                 <circle cx="7" cy="21" r="2" />
                 <circle cx="17" cy="21" r="2" />
-            </svg>
+            </svg >
+
         ),
+
+
         Quiz: (
             <svg
                 className="h-4 w-4 text-purple-500"

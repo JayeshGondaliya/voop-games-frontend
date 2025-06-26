@@ -11,7 +11,7 @@ const Footer = () => {
 
                     {/* Description */}
                     <div className="md:flex-1 max-w-md mx-auto md:mx-0 flex flex-col items-start mb-2 md:mb-0">
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-4">About Toca Games World</h3>
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-4">About Voop Games</h3>
                         <p className="leading-relaxed mb-4 text-left text-xs sm:text-sm md:text-base lg:text-lg">
                             Welcome to <span className="text-red-600 font-bold">Voop Games</span>, your go-to destination for free online games! We offer a wide variety of HTML5 games that you can play instantly on any device—no downloads required. Our goal is to provide a fun, safe, and accessible gaming experience for players of all ages. Join us today and explore new games, challenge your friends, and dive into hours of endless entertainment!
                         </p>
@@ -19,7 +19,7 @@ const Footer = () => {
 
 
                     {/* Links + Social */}
-                    <div className=" md:w-1/2 flex flex-nowrap md:flex-wrap lg:flex-wrap text-center gap-4 md:gap-8 justify-between md:justify-between lg:justify-around text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-6xl mx-auto ">
+                    <div className=" md:w-1/2 bg-red-500 flex flex-nowrap md:flex-wrap lg:flex-wrap text-center gap-4 md:gap-8 justify-between md:justify-between lg:justify-around text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-6xl mx-auto ">
 
                         {/* Our Links */}
                         <div className="text-left w-1/2 md:w-auto text-center">
@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
 
                         {/* Social + Terms */}
-                        <div className="text-left w-1/2 md:w-auto flex flex-col text-center">
+                        <div className="text-left  w-1/2 md:w-auto flex flex-col text-center">
                             {/* Social Icons */}
                             <div className="flex justify-center md:justify-start space-x-3 mb-4 text-center">
                                 <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full bg-indigo-600 hover:bg-indigo-700 transition flex items-center justify-center" title="Facebook">
