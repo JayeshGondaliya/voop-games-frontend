@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="md:flex-1 max-w-md mx-auto md:mx-0 flex flex-col items-start mb-2 md:mb-0">
                         <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-4">About Toca Games World</h3>
                         <p className="leading-relaxed mb-4 text-left text-xs sm:text-sm md:text-base lg:text-lg">
-                            Welcome to <span className="text-red-600 font-bold">Toca Games World</span>, your go-to destination for free online games! We offer a wide variety of HTML5 games that you can play instantly on any device—no downloads required. Our goal is to provide a fun, safe, and accessible gaming experience for players of all ages. Join us today and explore new games, challenge your friends, and dive into hours of endless entertainment!
+                            Welcome to <span className="text-red-600 font-bold">Voop Games</span>, your go-to destination for free online games! We offer a wide variety of HTML5 games that you can play instantly on any device—no downloads required. Our goal is to provide a fun, safe, and accessible gaming experience for players of all ages. Join us today and explore new games, challenge your friends, and dive into hours of endless entertainment!
                         </p>
                     </div>
 

@@ -50,12 +50,19 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
     return (
         <header className="sticky top-0 z-40 flex items-center justify-between bg-gray-900 pt-0 px-2 md:px-2 h-16 border-b-0 shadow-none">
             {isMobile && (
-                <button onClick={toggleSidebar} className="text-white lg:hidden">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <button
+                    onClick={toggleSidebar}
+                    className="w-8 h-8 flex items-center justify-center"
+                    aria-label="Toggle Menu"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" id="menu-strawberry">
+                        <path fill="#fff" fill-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM5 12C5 11.4477 5.44772 11 6 11L18 11C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13L6 13C5.44772 13 5 12.5523 5 12ZM7 18C7 17.4477 7.44772 17 8 17H16C16.5523 17 17 17.4477 17 18C17 18.5523 16.5523 19 16 19H8C7.44772 19 7 18.5523 7 18Z" clip-rule="evenodd"></path>
                     </svg>
+
                 </button>
             )}
+
+
 
             <div className={`flex-1 flex items-center ${isMobile && !isSearchActive ? '' : 'justify-start'} md:justify-start`}>
 
