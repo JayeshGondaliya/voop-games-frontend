@@ -86,14 +86,15 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
                         <>
                             <form
                                 onSubmit={handleSubmit}
-                                className="flex-1 flex items-center justify-center relative max-w-full px-4"
+                                className="flex-1 flex items-center focus:outline-none  justify-center relative max-w-full px-4"
                                 style={{ maxWidth: '100%' }}
                             >
                                 <input
                                     type="search"
                                     value={searchText}
                                     onChange={handleInputChange}
-                                    className="w-full focus:outline-none border-0 bg-gray-800 text-white placeholder-gray-400 focus:ring-0 h-10 px-3 py-2 text-base rounded-full"
+                                    className="w-full border-none focus:border-none focus:outline-none focus:ring-0 bg-gray-800 text-white placeholder-gray-400 s h-10 px-3 py-2 text-base rounded-full"
+
                                     placeholder="Search"
                                     autoFocus
                                     style={{ maxWidth: '100%' }}
@@ -166,7 +167,7 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
                                     type="search"
                                     value={searchText}
                                     onChange={handleInputChange}
-                                    className="w-full border-none bg-transparent text-white placeholder-gray-400 focus:ring-0 h-10 px-3 py-2 text-base rounded-full"
+                                    className="w-full border-none focus:outline-none bg-transparent text-white placeholder-gray-400 focus:ring-0 h-10 px-3 py-2 text-base rounded-full"
                                     placeholder="Search"
                                 />
                                 {searchText && (
