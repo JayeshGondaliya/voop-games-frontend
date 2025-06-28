@@ -113,14 +113,34 @@ function DetailsPage() {
                         ref={gameContainerRef}
                         className="relative bg-gray-900 rounded-lg shadow-lg p-0  sm:p-6 mb-2 flex flex-col lg:flex-row lg:items-start gap-x-4"
                     >
-                        {/* Left Side - Game Image */}
-                        <div className="w-full lg:w-1/2 flex justify-center items-center">
+                        <div className="w-full lg:w-1/2 flex justify-center items-center relative">
                             <img
                                 src={`https://www.lukogames.com/assets/games/${game.code}/banner.png`}
                                 alt={game.name}
-                                className="w-full max-w-full h-auto object-cover rounded-lg border-2 border-gray-700 shadow-md"
+                                className="w-full max-w-full h-auto object-cover rounded-lg border-2 border-gray-700"
                             />
+
+                            {/* Shadow Gradient Overlay */}
+                            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/100 to-transparent z-10 rounded-lg"></div>
+
+
+
+                            <a
+                                href={
+                                    game.category === "Quiz"
+                                        ? `https://lukogames.com/quiz/index.php?code=${game.code}`
+                                        : `https://lukogames.com/games/${game.code}`
+                                }
+                                target="_self"
+                                rel="noopener noreferrer"
+                                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-red-600 hover:bg-red-700 transition px-5 py-2 rounded-lg font-semibold text-white text-sm sm:text-base text-center z-20"
+                            >
+                                Play Now
+                            </a>
                         </div>
+
+
+
 
                         {/* Right Side - Game Details */}
                         <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-2">
