@@ -91,15 +91,15 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
                                     alt={game.name}
                                     className="h-70 w-full object-cover shadow-lg"
                                 />
-                                <div
+                                {/* <div
                                     className="absolute inset-0 flex items-center justify-center opacity-5 group-hover:opacity-100 transition-opacity duration-300 z-20"
                                     style={{
                                         backgroundColor: "rgba(58, 58, 58, 0.6)",
                                         backdropFilter: "blur(0px)",
                                         height: "200%",
                                     }}
-                                >
-                                    <p
+                                > */}
+                                {/* <p
                                         className="text-white text-lg font-semibold px-4 py-2 rounded"
                                         style={{
                                             boxShadow: "0 0 0px 0px rgba(55, 0, 0, 0.5)",
@@ -110,8 +110,8 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
                                         }}
                                     >
                                         {game.name}
-                                    </p>
-                                </div>
+                                    </p> */}
+                                {/* </div> */}
                             </div>
                         </div>
                     ))}

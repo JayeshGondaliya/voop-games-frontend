@@ -122,7 +122,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
                                 <Link
                                     to="/"
                                     onClick={closeSidebar}
-                                    className={`flex items-center bg-gray-800 px-4 py-2 rounded-lg ${location.pathname === '/' ? 'text-red-500' : 'text-white'
+                                    className={`flex items-center  px-4 py-2 rounded-lg ${location.pathname === '/' ? 'text-red-500  bg-gray-800' : 'text-white '
                                         }`}
                                 >
                                     <svg
@@ -140,44 +140,44 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
                             </li>
 
                             {/* Category Links */}
-                            <li>
-                                <ul className="pl-6 space-y-1 mt-1">
-                                    {categories.map((category, index) => {
-                                        const icon = categoryIcons[category] || (
-                                            <svg
-                                                className="h-4 w-4 text-gray-400"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                        );
+                            {/* <li> */}
+                            {/* <ul className="pl-6 space-y-1 mt-1"> */}
+                            {categories.map((category, index) => {
+                                const icon = categoryIcons[category] || (
+                                    <svg
+                                        className="h-4 w-4 text-gray-400"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle cx="12" cy="12" r="10" />
+                                    </svg>
+                                );
 
-                                        // Active if current path exactly matches /category/categoryName
-                                        const isActive = location.pathname === `/category/${category}`;
+                                // Active if current path exactly matches /category/categoryName
+                                const isActive = location.pathname === `/category/${category}`;
 
-                                        return (
-                                            <li key={index}>
-                                                <Link
-                                                    to={`/category/${category}`}
-                                                    onClick={closeSidebar}
-                                                    className={`flex items-center gap-2 py-1 hover:text-red-500 ${isActive ? 'text-red-500' : 'text-white'
-                                                        }`}
-                                                >
-                                                    {icon}
-                                                    <span>{category}</span>
-                                                </Link>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </li>
+                                return (
+                                    <li key={index}>
+                                        <Link
+                                            to={`/category/${category}`}
+                                            onClick={closeSidebar}
+                                            className={`flex items-center px-4 gap-x-2 py-1 hover:text-red-500 ${isActive ? 'text-red-500 flex-start bg-gray-800 px-4 py-2 rounded-lg' : 'text-white'
+                                                }`}
+                                        >
+                                            {icon}
+                                            <span>{category}</span>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
+                        {/* </li> */}
+                        {/* </ul> */}
                     </nav>
-                </div>
-            </aside>
+                </div >
+            </aside >
         </>
     );
 };

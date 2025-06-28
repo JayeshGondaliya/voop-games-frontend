@@ -106,12 +106,12 @@ function DetailsPage() {
                 />
             )}
 
-            <div className="flex-1 p-0 m-0 w-full">
+            <div className="flex-1 p-0  m-0 w-full">
                 {/* Game Detail */}
                 {game && (
                     <div
                         ref={gameContainerRef}
-                        className="relative bg-gray-900 rounded-lg shadow-lg p-0 sm:p-6 mb-12 flex flex-col lg:flex-row lg:items-start gap-7"
+                        className="relative bg-gray-900 rounded-lg shadow-lg p-0  sm:p-6 mb-2 flex flex-col lg:flex-row lg:items-start gap-x-4"
                     >
                         {/* Left Side - Game Image */}
                         <div className="w-full lg:w-1/2 flex justify-center items-center">
@@ -123,7 +123,7 @@ function DetailsPage() {
                         </div>
 
                         {/* Right Side - Game Details */}
-                        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-0">
+                        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-2">
                             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-wide text-white">
                                 {game.name}
                             </h2>
@@ -143,7 +143,7 @@ function DetailsPage() {
                             </p>
 
                             <div className="flex flex-wrap gap-2">
-                                {game.tag.split(",").map((tag, index) => (
+                                {game.tag.split(",").slice(0, 7).map((tag, index) => (
                                     <p
                                         key={index}
                                         className="bg-gray-700 text-white-400 text-xs sm:text-sm font-medium px-3 py-1 rounded-md"
@@ -161,7 +161,7 @@ function DetailsPage() {
                                 }
                                 target="_self"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-blue-600 hover:bg-blue-700 transition px-5 py-2.5 rounded-lg font-semibold text-white text-sm sm:text-base text-center mt-4"
+                                className="inline-block bg-red-600 hover:bg-red-700 transition px-5 py-2.5 rounded-lg font-semibold text-white text-sm sm:text-base text-center mt-3"
                             >
                                 Play Now
                             </a>
@@ -170,7 +170,7 @@ function DetailsPage() {
                 )}
 
                 {/* Related Games */}
-                <h1 className="text-2xl  sm:text-3xl font-bold text-start text-white mb-6">
+                <h1 className="text-2xl  sm:text-3xl font-bold text-start text-white mb-2">
                     Related Games
                 </h1>
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -187,15 +187,15 @@ function DetailsPage() {
                                     className="h-70 w-full object-cover shadow-lg"
                                     loading="lazy"
                                 />
-                                <div
+                                {/* <div
                                     className="absolute inset-0 flex items-center justify-center opacity-5 group-hover:opacity-100 transition-opacity duration-300 z-20"
                                     style={{
                                         backgroundColor: "rgba(58, 58, 58, 0.6)",
-                                        backdropFilter: "blur(0px)",
+                                        backdropFilter: "blur(-10px)",
                                         height: "200%",
                                     }}
-                                >
-                                    <p
+                                > */}
+                                {/* <p
                                         className="text-white text-lg font-semibold px-4 py-2 rounded"
                                         style={{
                                             boxShadow: "0 0 0px 0px rgba(55, 0, 0, 0.5)",
@@ -206,8 +206,8 @@ function DetailsPage() {
                                         }}
                                     >
                                         {relatedGame.name}
-                                    </p>
-                                </div>
+                                    </p> */}
+                                {/* </div> */}
                             </div>
                         </div>
                     ))}

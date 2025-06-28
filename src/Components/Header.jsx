@@ -191,7 +191,7 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
                                     </button>
                                 )}
                                 {/* Search Button at the right end */}
-                                <button
+                                {/* <button
                                     type="submit"
                                     className="ml-2 p-2 text-gray-400 hover:text-white"
                                     aria-label="Submit search"
@@ -209,7 +209,7 @@ const Header = ({ toggleSearch, toggleSidebar, isSearchActive, closeSidebar }) =
                                         <circle cx="11" cy="11" r="8" />
                                         <path d="m21 21-4.3-4.3" />
                                     </svg>
-                                </button>
+                                </button> */}
                             </form>
                         )}
                     </>

@@ -65,7 +65,7 @@ const Category = () => {
                                         className="h-70 w-full object-cover shadow-lg"
                                         loading="lazy"
                                     />
-                                    <div
+                                    {/* <div
                                         className="absolute inset-0 flex items-center justify-center opacity-5 group-hover:opacity-100 transition-opacity duration-300 z-20"
                                         style={{
                                             backgroundColor: "rgba(58, 58, 58, 0.6)",
@@ -85,7 +85,7 @@ const Category = () => {
                                         >
                                             {game.name}
                                         </p>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         ))}
