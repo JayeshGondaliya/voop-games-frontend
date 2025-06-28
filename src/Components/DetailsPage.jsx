@@ -121,22 +121,11 @@ function DetailsPage() {
                             />
 
                             {/* Shadow Gradient Overlay */}
-                            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/100 to-transparent z-10 rounded-lg"></div>
+                            {/* <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/100 to-transparent z-10 rounded-lg"></div> */}
 
 
 
-                            <a
-                                href={
-                                    game.category === "Quiz"
-                                        ? `https://lukogames.com/quiz/index.php?code=${game.code}`
-                                        : `https://lukogames.com/games/${game.code}`
-                                }
-                                target="_self"
-                                rel="noopener noreferrer"
-                                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-red-600 hover:bg-red-700 transition px-5 py-2 rounded-lg font-semibold text-white text-sm sm:text-base text-center z-20"
-                            >
-                                Play Now
-                            </a>
+
                         </div>
 
 
