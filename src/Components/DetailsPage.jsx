@@ -132,7 +132,8 @@ function DetailsPage() {
 
 
                         {/* Right Side - Game Details */}
-                        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-2">
+                        <div className="w-full lg:w-1/2 max-h-80 flex flex-col justify-center space-y-3">
+
                             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-wide text-white">
                                 {game.name}
                             </h2>
@@ -140,26 +141,30 @@ function DetailsPage() {
                             <p className="text-gray-400 text-base sm:text-lg">
                                 Category:{" "}
                                 <span
-                                    className="font-semibold text-blue-400 cursor-pointer hover:text-blue-600 transition-colors duration-300"
+                                    className="font-semibold text-red-600 cursor-pointer hover:text-blue-600 transition-colors duration-300"
                                     onClick={() => navigate(`/category/${game.category}`)}
                                 >
                                     {game.category}
                                 </span>
                             </p>
+                            <div className="overflow-hidden my-2 line-clamp-2">
+                                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                    {game.description}
+                                </p>
+                            </div>
 
-                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                                {game.description}
-                            </p>
 
-                            <div className="flex flex-wrap gap-2">
-                                {game.tag.split(",").slice(0, 7).map((tag, index) => (
-                                    <p
-                                        key={index}
-                                        className="bg-gray-700 text-white-400 text-xs sm:text-sm font-medium px-3 py-1 rounded-md"
-                                    >
-                                        {tag.trim()}
-                                    </p>
-                                ))}
+                            <div className="max-h-14 overflow-hidden  line-clamp-2 my-2  py-1">
+                                <div className="flex flex-wrap gap-2">
+                                    {game.tag.split(",").slice(0,).map((tag, index) => (
+                                        <p
+                                            key={index}
+                                            className="bg-gray-700 text-white text-xs font-medium px-2 py-0.5 rounded-md"
+                                        >
+                                            {tag.trim()}
+                                        </p>
+                                    ))}
+                                </div>
                             </div>
 
                             <a
@@ -170,7 +175,7 @@ function DetailsPage() {
                                 }
                                 target="_self"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-red-600 hover:bg-red-700 transition px-5 py-2.5 rounded-lg font-semibold text-white text-sm sm:text-base text-center mt-3"
+                                className="inline-block bg-red-600 hover:bg-red-700 transition px-5 py-2.5 rounded-lg font-semibold text-white text-sm sm:text-base text-center mt-2"
                             >
                                 Play Now
                             </a>
