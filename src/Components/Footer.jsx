@@ -66,7 +66,7 @@ const Footer = () => {
             </div>
 
             {/* Developed By */}
-            <div className="text-center text-white   text-sm">
+            <div className="text-center text-white  mt-4 text-sm">
                 <p>
                     <em className="not-italic font-light">Developed By </em>
                     <span className="font-semibold text-white">Jayesh K. Gondaliya, Ruchit D. Gevariya</span>
