@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const Footer = () => {
     return (
         <footer className="text-white p-2 ">
-            <div className="fluid-container mx-auto max-w-7xl">
+            <div className="fluid-container mx-auto ">
 
                 {/* Upper Part */}
                 <div className="flex  m-0 flex-col md:flex-row md:justify-between md:space-x-8 items-start md:items-start text-left">
