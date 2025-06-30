@@ -138,24 +138,43 @@ function DetailsPage() {
                                         {game.category}
                                     </span>
                                 </p>
-                                <div className="line-clamp-2">
-                                    <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+                                <div className="line-clamp-3">
+                                    <p className="text-gray-300 sm:max-h-[4.2rem] text-sm lg:text-base leading-relaxed">
                                         {game.description}
                                     </p>
                                 </div>
 
-                                <div className="max-h-[4rem] lg:max-h-[4rem] overflow-hidden py-0">
-                                    <div className="flex flex-wrap gap-2">
-                                        {game.tag.split(",").map((tag, index) => (
-                                            <span
-                                                key={index}
-                                                className="bg-gray-700 text-white text-xs px-2 py-1 rounded-md"
-                                            >
-                                                {tag.trim()}
-                                            </span>
-                                        ))}
+                                <div className="overflow-hidden 
+    max-h-[4.2rem]          /* Mobile (2 lines) */
+    sm:max-h-[4.2rem]       /* Tablet (3 lines) */
+    lg:max-h-[6rem]         /* Laptop (4 lines) */
+    xl:max-h-none xl:overflow-visible "> {/* XL screens: no limit */}
+
+                                    <div
+                                        className="
+    overflow-hidden
+    max-h-[3.8rem]           /* Mobile - 2 lines */
+    sm:max-h-[4.7rem]        /* Tablet & up - 3 lines */
+    xl:max-h-[5rem]          /* XL adjust if needed */
+"
+                                    >
+                                        <div className="flex flex-wrap gap-1 sm:gap-2">
+                                            {game.tag.split(",").map((tag, index) => (
+                                                <span
+                                                    key={index}
+                                                    className="bg-gray-700 text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 py-[2px] rounded-md leading-tight"
+                                                >
+                                                    {tag.trim()}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
+
                                 </div>
+
+
+
+
                             </div>
 
                             <a
