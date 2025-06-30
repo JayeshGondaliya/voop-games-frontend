@@ -39,7 +39,7 @@ const Category = () => {
     return (
         <div className="flex bg-gray-900 text-white">
             {/* Main Content */}
-            <main className="flex-1 p-4 md:p-8 overflow-auto">
+            <main className="flex-1 p-4 pt-0 md:p-8 overflow-auto">
                 <h2 className="text-2xl font-bold mb-6 text-center">{capitalizedCategory} Games</h2>
 
                 {loading ? (
