@@ -124,57 +124,54 @@ function DetailsPage() {
 
                         {/* Right Side - Game Details */}
                         <div className="w-full lg:w-1/2 flex flex-col justify-between">
-                            <div className="space-y-3">
-                                <h2 className="text-2xl lg:text-3xl xl:text-4xl   font-extrabold text-white">
+                            <div className="space-y-3 2xl:space-y-5">
+                                <h2 className="text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-extrabold text-white">
                                     {game.name}
                                 </h2>
 
-                                <p className="text-gray-400 text-base lg:text-lg">
+                                <p className="text-gray-400 text-base lg:text-lg 2xl:text-2xl">
                                     Category:{" "}
                                     <span
-                                        className="font-semibold text-red-400 cursor-pointer hover:text-blue-600"
+                                        className="font-semibold text-red-400 cursor-pointer hover:text-blue-600 2xl:text-2xl"
                                         onClick={() => navigate(`/category/${game.category}`)}
                                     >
                                         {game.category}
                                     </span>
                                 </p>
+
                                 <div className="line-clamp-3">
-                                    <p className="text-gray-300 sm:max-h-[4.2rem] text-sm lg:text-base leading-relaxed">
+                                    <p className="text-gray-300 text-sm lg:text-base 2xl:text-xl leading-relaxed 2xl:leading-loose">
                                         {game.description}
                                     </p>
                                 </div>
 
-                                <div className="overflow-hidden 
-    max-h-[4.2rem]          /* Mobile (2 lines) */
-    sm:max-h-[3.2rem]       /* Tablet (3 lines) */
-    lg:max-h-[6rem]         /* Laptop (4 lines) */
-    xl:max-h-none xl:overflow-visible "> {/* XL screens: no limit */}
-
-                                    <div
-                                        className="
-    overflow-hidden
-    max-h-[3.8rem]           /* Mobile - 2 lines */
-    sm:max-h-[5rem]        /* Tablet & up - 3 lines */
-    xl:max-h-[5rem]          /* XL adjust if needed */
-"
-                                    >
-                                        <div className="flex  flex-wrap gap-1 sm:gap-2">
+                                <div className="
+            overflow-hidden 
+            max-h-[4.2rem]       
+            sm:max-h-[3.2rem]     
+            lg:max-h-[6rem]       
+            xl:max-h-none xl:overflow-visible 
+            2xl:max-h-none 2xl:overflow-visible
+        ">
+                                    <div className="
+                overflow-hidden
+                max-h-[3.8rem]         
+                sm:max-h-[5rem]        
+                xl:max-h-[5rem]         
+                2xl:max-h-none 2xl:overflow-visible
+            ">
+                                        <div className="flex flex-wrap gap-1 sm:gap-2 2xl:gap-4">
                                             {game.tag.split(",").map((tag, index) => (
                                                 <span
                                                     key={index}
-                                                    className="bg-gray-700 text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 py-[2px] rounded-md leading-tight"
+                                                    className="bg-gray-700 text-white text-[10px] sm:text-xs md:text-sm 2xl:text-lg font-medium px-2 py-[2px] 2xl:px-3 2xl:py-1 rounded-md leading-tight"
                                                 >
                                                     {tag.trim()}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
-
                                 </div>
-
-
-
-
                             </div>
 
                             <a
@@ -185,11 +182,13 @@ function DetailsPage() {
                                 }
                                 target="_self"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-red-600 hover:bg-red-700 transition px-6 py-2 rounded-lg font-bold text-white text-center mt-2"
+                                className="inline-block bg-red-600 hover:bg-red-700 transition px-6 py-2 2xl:px-8 2xl:py-4 rounded-lg font-bold text-white text-center mt-2 text-base 2xl:text-2xl"
                             >
                                 Play Now
                             </a>
                         </div>
+
+
                     </div>
                 )}
 
