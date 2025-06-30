@@ -146,7 +146,7 @@ function DetailsPage() {
 
                                 <div className="overflow-hidden 
     max-h-[4.2rem]          /* Mobile (2 lines) */
-    sm:max-h-[4.2rem]       /* Tablet (3 lines) */
+    sm:max-h-[3.2rem]       /* Tablet (3 lines) */
     lg:max-h-[6rem]         /* Laptop (4 lines) */
     xl:max-h-none xl:overflow-visible "> {/* XL screens: no limit */}
 
@@ -158,7 +158,7 @@ function DetailsPage() {
     xl:max-h-[5rem]          /* XL adjust if needed */
 "
                                     >
-                                        <div className="flex flex-wrap gap-1 sm:gap-2">
+                                        <div className="flex  flex-wrap gap-1 sm:gap-2">
                                             {game.tag.split(",").map((tag, index) => (
                                                 <span
                                                     key={index}
