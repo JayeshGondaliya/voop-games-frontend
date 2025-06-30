@@ -62,7 +62,7 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
             className={` transition-all duration-300 ${isSidebarOpen
                 ? "fixed inset-0 z-40 bg-black/70 backdrop-blur-sm overflow-y-auto"
                 : "relative"
-                } p-4 md:p-0`}
+                } p-2 md:p-0`}
             onClick={() => isSidebarOpen && setIsSidebarOpen(false)}
         >
             <div onClick={(e) => e.stopPropagation()}>
@@ -78,7 +78,7 @@ const GameCard = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 )}
 
                 {/* Grid with 2 columns on mobile */}
-                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 p-0 gap-6">
                     {allGame.map((game, index) => (
                         <div
                             key={index}

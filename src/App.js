@@ -63,7 +63,7 @@ const App = () => {
 
           {/* Main content */}
           <main
-            className={`flex-1 p-0 relative z-30 transition-all duration-300 ${
+            className={`flex-1 p-2 relative z-30 transition-all duration-300 ${
               isSidebarOpen ? 'blur-sm' : ''
             }`}
             onClick={() => isSidebarOpen && closeSidebar()}
