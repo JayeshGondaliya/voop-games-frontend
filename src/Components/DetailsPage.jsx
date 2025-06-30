@@ -138,7 +138,7 @@ function DetailsPage() {
                                         {game.category}
                                     </span>
                                 </p>
-
+                                <p></p>
                                 <div className="line-clamp-2">
                                     <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
                                         {game.description}
