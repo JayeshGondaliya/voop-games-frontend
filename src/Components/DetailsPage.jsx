@@ -154,7 +154,7 @@ function DetailsPage() {
                                         className="
     overflow-hidden
     max-h-[3.8rem]           /* Mobile - 2 lines */
-    sm:max-h-[4.7rem]        /* Tablet & up - 3 lines */
+    sm:max-h-[5rem]        /* Tablet & up - 3 lines */
     xl:max-h-[5rem]          /* XL adjust if needed */
 "
                                     >

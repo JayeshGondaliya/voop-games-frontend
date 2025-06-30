@@ -74,9 +74,30 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
             </svg>
         ),
         Action: (
-            <svg className="h-4 w-4 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 13l4 4L19 7" />
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#fff"
+                width="24"
+                height="24"
+                viewBox="0 0 2.33333 2.33333"
+                style={{
+                    shapeRendering: "geometricPrecision",
+                    textRendering: "geometricPrecision",
+                    imageRendering: "optimizeQuality",
+                    fillRule: "evenodd",
+                    clipRule: "evenodd"
+                }}
+            >
+                <g>
+                    <path d="M1.00178 1.18762c-0.00764567..." fillRule="nonzero" />
+                    <path d="M1.34017 1.72908l0.395358..." fillRule="nonzero" />
+                    <path d="M1.40702 1.42317c0.0186181..." fillRule="nonzero" />
+                    <path d="M1.96744 0.366417l-0.320106..." fillRule="nonzero" />
+                    <path d="M0.979016 1.7715l-0.423638..." fillRule="nonzero" />
+                    <path d="M0.898031 1.39489c-0.0186181..." fillRule="nonzero" />
+                </g>
             </svg>
+
         ),
         Strategy: (
             <svg className="h-4 w-4 text-teal-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -114,7 +135,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, toggleSidebar, closeSidebar 
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
             >
-                <div className="flex h-full flex-col overflow-auto pt-9 px-4">
+                <div className="flex h-full flex-col overflow-auto pt-0 px-4">
                     <nav className="flex-1">
                         <ul className="space-y-2">
                             {/* Home Link */}
