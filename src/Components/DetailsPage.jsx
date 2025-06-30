@@ -111,58 +111,54 @@ function DetailsPage() {
                 {game && (
                     <div
                         ref={gameContainerRef}
-                        className="relative bg-gray-900 rounded-lg shadow-lg p-0 sm:p-6 mb-2 flex flex-col lg:flex-row lg:items-stretch gap-x-4"
+                        className="relative bg-gray-900 rounded-lg shadow-lg p-0 sm:p-6 mb-6 flex flex-col lg:flex-row gap-6 lg:items-stretch"
                     >
                         {/* Image Section */}
-                        <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+                        <div className="w-full lg:w-1/2 flex justify-center items-center">
                             <img
                                 src={`https://www.lukogames.com/assets/games/${game.code}/banner.png`}
                                 alt={game.name}
-                                className="w-full h-auto object-cover rounded-lg border-2 border-gray-700"
+                                className="w-full h-full max-h-[400px] lg:max-h-[500px] object-cover rounded-lg border-2 border-gray-700"
                             />
                         </div>
 
-                        {/* Right Side */}
-                        <div className="w-full lg:w-1/2 flex flex-col justify-between h-full">
-                            {/* Title + Details */}
-                            <div className="space-y-2">
-                                {/* Game Name */}
-                                <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold tracking-wide text-white">
+                        {/* Right Side - Game Details */}
+                        <div className="w-full lg:w-1/2 flex flex-col justify-between">
+                            <div className="space-y-3">
+                                <h2 className="text-2xl lg:text-3xl xl:text-4xl   font-extrabold text-white">
                                     {game.name}
                                 </h2>
 
-                                {/* Category */}
-                                <p className="text-gray-400 text-xs sm:text-sm md:text-base">
+                                <p className="text-gray-400 text-base lg:text-lg">
                                     Category:{" "}
                                     <span
-                                        className="font-semibold text-red-400 cursor-pointer hover:text-blue-600 transition-colors duration-300"
+                                        className="font-semibold text-red-400 cursor-pointer hover:text-blue-600"
                                         onClick={() => navigate(`/category/${game.category}`)}
                                     >
                                         {game.category}
                                     </span>
                                 </p>
 
-                                {/* Description (2 lines only) */}
-                                <p className="text-gray-300 lg:text-sm text-xs sm:text-sm md:text-base leading-relaxed overflow-hidden line-clamp-2">
-                                    {game.description}
-                                </p>
+                                <div className="line-clamp-2">
+                                    <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+                                        {game.description}
+                                    </p>
+                                </div>
 
-                                {/* Tags (max 2 lines) */}
-                                <div className="max-h-[3rem] overflow-hidden">
-                                    <div className="flex flex-wrap gap-1  sm:gap-2">
+                                <div className="max-h-[4rem] lg:max-h-[4rem] overflow-hidden py-0">
+                                    <div className="flex flex-wrap gap-2">
                                         {game.tag.split(",").map((tag, index) => (
-                                            <p
+                                            <span
                                                 key={index}
-                                                className="bg-gray-700  text-white text-[9px] sm:text-[10px] md:text-xs font-medium px-2 py-0.5 rounded-md"
+                                                className="bg-gray-700 text-white text-xs px-2 py-1 rounded-md"
                                             >
                                                 {tag.trim()}
-                                            </p>
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Play Now Button */}
                             <a
                                 href={
                                     game.category === "Quiz"
@@ -171,19 +167,13 @@ function DetailsPage() {
                                 }
                                 target="_self"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-lg font-semibold text-white text-xs sm:text-sm md:text-base text-center mt-2"
+                                className="inline-block bg-red-600 hover:bg-red-700 transition px-6 py-2 rounded-lg font-bold text-white text-center mt-2"
                             >
                                 Play Now
                             </a>
                         </div>
-
-
                     </div>
                 )}
-
-
-
-
 
                 {/* Related Games */}
                 <h1 className="text-2xl  sm:text-3xl font-bold text-start text-white mb-2">
