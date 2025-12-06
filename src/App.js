@@ -8,7 +8,7 @@ import DetailsPage from './Components/DetailsPage';
 import Category from './Components/Category';
 import GameCard from './Components/GameCard';
 
-import './App.css'
+import './App.css';
 import './index.css';
 import Footer from './Components/Footer';
 import ScrollToTop from './Components/ScrollToTop';
